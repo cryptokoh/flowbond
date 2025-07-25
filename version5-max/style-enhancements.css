@@ -1,0 +1,363 @@
+/* Enhanced styles for Version 5 MAX */
+
+/* Import base styles */
+@import url('style.css');
+
+/* Enhanced animations */
+@keyframes float-advanced {
+  0%, 100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(50px, -30px) scale(1.1) rotate(5deg);
+  }
+  50% {
+    transform: translate(-30px, 20px) scale(0.9) rotate(-5deg);
+  }
+  75% {
+    transform: translate(40px, 40px) scale(1.05) rotate(3deg);
+  }
+}
+
+/* Glowing text enhancement */
+.gradient-text {
+  position: relative;
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: brightness(1) drop-shadow(0 0 20px rgba(255, 110, 199, 0.5));
+  }
+  50% {
+    filter: brightness(1.2) drop-shadow(0 0 40px rgba(255, 110, 199, 0.8));
+  }
+}
+
+/* Enhanced button effects */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: var(--gradient-neon);
+  border-radius: 12px;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  filter: blur(10px);
+}
+
+.btn:hover::after {
+  opacity: 0.5;
+}
+
+/* Card depth effects */
+.process-card,
+.utility-card,
+.faq-card {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+.process-card::before,
+.utility-card::before,
+.faq-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(255, 110, 199, 0.1) 100%);
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.process-card:hover::before,
+.utility-card:hover::before,
+.faq-card:hover::before {
+  opacity: 1;
+}
+
+/* Animated backgrounds */
+.hero-bg-gradient {
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 110, 199, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(185, 103, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+  animation: gradient-shift 20s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  33% {
+    transform: scale(1.1) rotate(120deg);
+  }
+  66% {
+    transform: scale(0.9) rotate(240deg);
+  }
+}
+
+/* Enhanced orbs */
+.orb {
+  box-shadow: 
+    0 0 100px currentColor,
+    inset 0 0 100px currentColor;
+  animation: float-advanced 30s infinite ease-in-out;
+}
+
+.orb-1 {
+  background: radial-gradient(circle, rgba(255, 110, 199, 0.8) 0%, transparent 70%);
+}
+
+.orb-2 {
+  background: radial-gradient(circle, rgba(185, 103, 255, 0.8) 0%, transparent 70%);
+}
+
+.orb-3 {
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.8) 0%, transparent 70%);
+}
+
+/* Token animation enhancement */
+.token-display {
+  animation: levitate 4s ease-in-out infinite;
+}
+
+@keyframes levitate {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+.token-inner {
+  box-shadow: 
+    0 0 50px rgba(255, 110, 199, 0.5),
+    0 0 100px rgba(255, 110, 199, 0.3),
+    inset 0 0 50px rgba(255, 110, 199, 0.2);
+}
+
+/* Device screen enhancement */
+.device-screen {
+  position: relative;
+  overflow: hidden;
+}
+
+.device-screen::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 110, 199, 0.1) 50%, transparent 70%);
+  animation: screen-scan 3s linear infinite;
+}
+
+@keyframes screen-scan {
+  0% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%);
+  }
+}
+
+/* Stat counters enhancement */
+.stat-value {
+  position: relative;
+  display: inline-block;
+}
+
+.stat-value::after {
+  content: attr(data-value);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--primary-pink);
+  opacity: 0;
+  animation: counter-glow 2s ease-in-out infinite;
+  z-index: -1;
+  filter: blur(10px);
+}
+
+@keyframes counter-glow {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+/* Navbar enhancement */
+.navbar {
+  border-bottom: 1px solid transparent;
+  background: 
+    linear-gradient(to bottom, rgba(10, 10, 15, 0.9), rgba(10, 10, 15, 0.7)),
+    linear-gradient(to right, transparent, rgba(255, 110, 199, 0.1), transparent);
+  background-size: 100% 100%, 200% 100%;
+  animation: navbar-gradient 10s linear infinite;
+}
+
+@keyframes navbar-gradient {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, 200% 0;
+  }
+}
+
+/* Section transitions */
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-pink), transparent);
+  animation: section-line 3s linear infinite;
+}
+
+@keyframes section-line {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Interactive cursor effects */
+body {
+  cursor: none;
+}
+
+a, button, .btn {
+  cursor: none;
+}
+
+/* Holographic effect for cards */
+.process-card::after,
+.utility-card::after,
+.faq-card::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    #ff6ec7, #b967ff, #00d4ff, #ff6ec7);
+  background-size: 400% 400%;
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: holographic 3s linear infinite;
+}
+
+.process-card:hover::after,
+.utility-card:hover::after,
+.faq-card:hover::after {
+  opacity: 1;
+}
+
+@keyframes holographic {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Loading animation */
+.page-loader {
+  background: radial-gradient(circle at center, rgba(255, 110, 199, 0.1), var(--bg-primary));
+}
+
+/* Audio visualizer styling */
+.audio-visualizer {
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 110, 199, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* Particle canvas optimization */
+.particle-canvas {
+  opacity: 0.6;
+  mix-blend-mode: screen;
+}
+
+/* Enhanced scroll indicator */
+.scroll-indicator {
+  height: 3px;
+  box-shadow: 0 0 10px rgba(255, 110, 199, 0.8);
+}
+
+/* 3D text effect */
+.hero-title {
+  text-shadow: 
+    0 1px 0 rgba(255, 110, 199, 0.8),
+    0 2px 0 rgba(255, 110, 199, 0.6),
+    0 3px 0 rgba(255, 110, 199, 0.4),
+    0 4px 0 rgba(255, 110, 199, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.5),
+    0 5px 20px rgba(255, 110, 199, 0.5);
+}
+
+/* Responsive enhancements */
+@media (max-width: 768px) {
+  .particle-canvas {
+    opacity: 0.3;
+  }
+  
+  .audio-visualizer {
+    width: 150px;
+    height: 60px;
+  }
+  
+  .custom-cursor,
+  .cursor-dot {
+    display: none;
+  }
+}
