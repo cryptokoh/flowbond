@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowBond Prototypes - Choose Your Style</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #00f5ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: #808080;
+            margin-bottom: 60px;
+        }
+
+        .prototypes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .prototype-card {
+            background: #1a1a1a;
+            border-radius: 20px;
+            padding: 40px;
+            text-decoration: none;
+            color: #e0e0e0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+        }
+
+        .prototype-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .prototype-number {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            opacity: 0.1;
+        }
+
+        .prototype-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .prototype-description {
+            font-size: 1rem;
+            color: #808080;
+            margin-bottom: 20px;
+        }
+
+        .prototype-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .feature-tag {
+            padding: 5px 15px;
+            background: #2a2a2a;
+            border-radius: 20px;
+            font-size: 0.875rem;
+        }
+
+        /* Version-specific colors */
+        .version1 .prototype-number {
+            color: #667eea;
+        }
+
+        .version1:hover {
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .version2 .prototype-number {
+            color: #00f5ff;
+        }
+
+        .version2:hover {
+            border-color: #00f5ff;
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.3);
+        }
+
+        .version2 .feature-tag {
+            background: rgba(0, 245, 255, 0.1);
+            color: #00f5ff;
+        }
+
+        .version3 .prototype-number {
+            color: #4a5568;
+        }
+
+        .version3:hover {
+            border-color: #4a5568;
+            box-shadow: 0 10px 30px rgba(74, 85, 104, 0.3);
+        }
+
+        .version4 .prototype-number {
+            color: #ff006e;
+        }
+
+        .version4:hover {
+            border-color: #ff006e;
+            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.3);
+        }
+
+        .version5 .prototype-number {
+            color: #d25ca7;
+        }
+
+        .version5:hover {
+            border-color: #d25ca7;
+            box-shadow: 0 10px 30px rgba(210, 92, 167, 0.3);
+        }
+
+        .version5 .feature-tag {
+            background: rgba(210, 92, 167, 0.1);
+            color: #d25ca7;
+        }
+
+        .info {
+            margin-top: 60px;
+            padding: 30px;
+            background: #1a1a1a;
+            border-radius: 20px;
+            border: 1px solid #2a2a2a;
+        }
+
+        .info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .info p {
+            font-size: 1rem;
+            color: #808080;
+            margin-bottom: 0;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-left: 10px;
+        }
+
+        .status.ready {
+            background: #10b981;
+            color: white;
+        }
+
+        .status.coming-soon {
+            background: #f59e0b;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FlowBond Prototypes</h1>
+        <p>Choose your preferred design style for the FlowBond website</p>
+
+        <div class="prototypes-grid">
+            <a href="version1/index.html" class="prototype-card version1">
+                <div class="prototype-number">01</div>
+                <h3 class="prototype-title">Modern Gradient</h3>
+                <p class="prototype-description">Clean, professional design with smooth gradients and elegant animations</p>
+                <div class="prototype-features">
+                    <span class="feature-tag">Gradients</span>
+                    <span class="feature-tag">Animations</span>
+                    <span class="feature-tag">Professional</span>
+                </div>
+                <span class="status ready">Ready</span>
+            </a>
+
+            <a href="version2/index.html" class="prototype-card version2">
+                <div class="prototype-number">02</div>
+                <h3 class="prototype-title">Neon Cyberpunk</h3>
+                <p class="prototype-description">Futuristic design with neon colors, glitch effects, and cyber aesthetics</p>
+                <div class="prototype-features">
+                    <span class="feature-tag">Neon</span>
+                    <span class="feature-tag">Glitch</span>
+                    <span class="feature-tag">3D Effects</span>
+                </div>
+                <span class="status ready">Ready</span>
+            </a>
+
+            <a href="version3/index.html" class="prototype-card version3">
+                <div class="prototype-number">03</div>
+                <h3 class="prototype-title">Minimalist Clean</h3>
+                <p class="prototype-description">Ultra-clean design focused on content with subtle interactions</p>
+                <div class="prototype-features">
+                    <span class="feature-tag">Minimal</span>
+                    <span class="feature-tag">Typography</span>
+                    <span class="feature-tag">White Space</span>
+                </div>
+                <span class="status ready">Ready</span>
+            </a>
+
+            <a href="version4/index.html" class="prototype-card version4">
+                <div class="prototype-number">04</div>
+                <h3 class="prototype-title">Retro 80s</h3>
+                <p class="prototype-description">Nostalgic 80s style with synthwave colors and retro patterns</p>
+                <div class="prototype-features">
+                    <span class="feature-tag">Synthwave</span>
+                    <span class="feature-tag">Retro</span>
+                    <span class="feature-tag">Neon Grid</span>
+                </div>
+                <span class="status ready">Ready</span>
+            </a>
+
+            <a href="version5/index.html" class="prototype-card version5">
+                <div class="prototype-number">05</div>
+                <h3 class="prototype-title">Clean Neonesque</h3>
+                <p class="prototype-description">Modern design with purple/pink neon accents and dark aesthetic</p>
+                <div class="prototype-features">
+                    <span class="feature-tag">Neon Glow</span>
+                    <span class="feature-tag">Dark Mode</span>
+                    <span class="feature-tag">Purple Theme</span>
+                </div>
+                <span class="status ready">Ready</span>
+            </a>
+        </div>
+
+        <div class="info">
+            <h2>About These Prototypes</h2>
+            <p>Each prototype represents a different visual approach to the FlowBond website. They all contain the same content but showcase different design philosophies and aesthetic choices. Feel free to explore each version to find the style that best represents your vision for FlowBond.</p>
+        </div>
+    </div>
+</body>
+</html>
